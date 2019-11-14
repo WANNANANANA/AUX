@@ -14,7 +14,13 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'introduction',
-      component: Introduction
+      component: Introduction,
+      children: [
+        {
+          path: '/part/:id',
+          component: Part
+        }
+      ]
     },
     {
       path: '/exhibition',
@@ -26,11 +32,11 @@ const router = new VueRouter({
       name: 'visition',
       component: Visition
     },
-    {
-      path: '/part',
-      name: 'part',
-      component: Part
-    }
+    // {
+    //   path: '/part/:id',
+    //   name: 'part',
+    //   component: Part
+    // }
   ]
 })
 
