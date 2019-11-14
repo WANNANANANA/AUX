@@ -1,6 +1,7 @@
 <template>
     <div class="exhibition">
-        this is exhibition
+        <p>this is exhibition</p>
+        <router-link li="tag" to="/part">part</router-link>
     </div>
 </template>
 <script>

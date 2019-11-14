@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <header>
-      <h3>导览系统</h3>
-      <h4>NAVIGATION STSTEM</h4>
     </header>
     <main>
       <router-view />
@@ -22,31 +20,22 @@
 #app {
   position: relative;
   .boxSet();
+  background-image: url('./assets/images/bg@2x.png');
+  background-size: cover;
+  background-position: center bottom;
   header {
     position: fixed;
     top: 0px;
     left: 0px;
-    .boxSet(100%, 60px);
-    //   background-image: url();
-    //   background-size: 100%;
+    .boxSet(100%, 10%);
     background: red;
-    h3 {
-      width: 100%;
-      .fontSet(22px, #000);
-      text-align: center;
-    }
-    h4 {
-      width: 100%;
-      text-align: center;
-      .fontSet(12px, #000);
-    }
   }
   main {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    // .boxSet();
+    font-size: 0;
   }
   footer {
     position: fixed;

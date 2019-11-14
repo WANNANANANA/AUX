@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Introduction from '../views/introduction'
 import Exhibition from '../views/exhibition'
 import Visition from '../views/visition'
+import Part from '../components/part'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const router = new VueRouter({
       path: '/visition',
       name: 'visition',
       component: Visition
+    },
+    {
+      path: '/part',
+      name: 'part',
+      component: Part
     }
   ]
 })
