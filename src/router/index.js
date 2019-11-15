@@ -13,11 +13,15 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      redirect: '/introduction'
+    },
+    {
+      path: '/introduction',
       name: 'introduction',
       component: Introduction,
       children: [
         {
-          path: '/part/:id',
+          path: 'part/:id',
           component: Part
         }
       ]

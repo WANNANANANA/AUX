@@ -6,7 +6,7 @@
     </main>
     <footer>
       <ul>
-        <router-link to="/" tag="li" exact>
+        <router-link to="/introduction" tag="li">
           <div class="logo"></div>
           <div class="text"></div>
         </router-link>

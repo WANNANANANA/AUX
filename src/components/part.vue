@@ -10,12 +10,19 @@ export default {
     return {};
   },
   methods: {
-      back() {
-          this.$router.back();
-      }
+    back() {
+      this.$router.back();
+    }
   }
 };
 </script>
 <style lang="less">
 @import "../assets/style/common.less";
+.part {
+  position: absolute;
+  width: 7.4rem;
+  height: 7.4rem;
+  overflow: hidden;
+  z-index: 12;
+}
 </style>

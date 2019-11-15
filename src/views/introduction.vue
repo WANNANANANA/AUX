@@ -1,56 +1,85 @@
 <template>
   <div class="introduction">
-    <div class="circle circle-out"></div>
-    <div class="circle circle-center"></div>
-    <div class="circle circle-in"></div>
-    <img src="../assets/images/title@2x.png" alt />
-    <router-link tag="li" to="/part/0"></router-link>
-    <router-link tag="li" to="/part/26"></router-link>
-    <router-link tag="li" to="/part/37"></router-link>
-    <router-link tag="li" to="/part/60"></router-link>
-    <router-link tag="li" to="/part/100"></router-link>
+    <div class="children" v-if="showKey">
+      <router-view></router-view>
+    </div>
+    <div class="parent" v-else>
+      <div class="title">
+        <arrow></arrow>
+        <img src="../assets/images/title@2x.png" alt />
+        <arrow></arrow>
+      </div>
+      <router-link tag="li" to="/introduction/part/0"></router-link>
+      <router-link tag="li" to="/introduction/part/26"></router-link>
+      <router-link tag="li" to="/introduction/part/37"></router-link>
+      <router-link tag="li" to="/introduction/part/60"></router-link>
+      <router-link tag="li" to="/introduction/part/100"></router-link>
+    </div>
+    <dial></dial>
   </div>
 </template>
 <script>
+import arrow from "../components/arrow";
+import dial from "../components/dial";
 export default {
   name: "introduction",
   data() {
-    return {};
+    return {
+      showKey: false
+    };
+  },
+  components: { arrow, dial },
+  beforeRouteUpdate(to, from, next) {
+    if (to.params.id) {
+      this.showKey = true;
+    } else {
+      this.showKey = false;
+    }
+    next();
   }
 };
 </script>
 <style lang="less">
 @import "../assets/style/common.less";
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .introduction {
   position: relative;
   .boxSet(7.4rem, 7.4rem);
-  .circle {
-    .boxSet();
+  overflow: hidden;
+  .children {
     position: absolute;
-    background-position: center center;
-    background-repeat: no-repeat;
-    &.circle-out {
-      z-index: 1;
-      background-size: 100% 100%;
-      background-image: url("../assets/images/circle_out@2x.png");
-    }
-    &.circle-center {
-      z-index: 2;
-      background-size: 96% 96%;
-      background-image: url("../assets/images/circle_center@2x.png");
-    }
-    &.circle-in {
-      z-index: 3;
-      background-size: 86% 86%;
-      background-image: url("../assets/images/circle_in@2x.png");
-    }
+    z-index: 20;
   }
-  img {
+  .title {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 8;
     transform: translate(-50%, -50%);
-    .boxSet(3.08rem, 2.12rem);
+    img {
+      .boxSet(3.08rem, 2.12rem);
+    }
+    .arrow {
+      left: 50%;
+      z-index: 10;
+      &:nth-of-type(1) {
+        top: 0;
+        transform: translate(-50%, -50%);
+      }
+      &:nth-of-type(2) {
+        bottom: 0;
+        transform: rotateX(180deg);
+        margin-left: -0.45rem;
+        margin-bottom: -0.25rem;
+      }
+    }
   }
   li {
     position: absolute;
