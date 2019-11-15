@@ -36,11 +36,11 @@ const router = new VueRouter({
       name: 'visition',
       component: Visition
     },
-    // {
-    //   path: '/part/:id',
-    //   name: 'part',
-    //   component: Part
-    // }
+    {
+      path: '/part/:id',
+      name: 'part',
+      component: Part
+    }
   ]
 })
 

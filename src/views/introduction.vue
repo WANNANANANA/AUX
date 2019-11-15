@@ -1,19 +1,16 @@
 <template>
   <div class="introduction">
-    <div class="children" v-if="showKey">
-      <router-view></router-view>
-    </div>
-    <div class="parent" v-else>
+    <div class="parent">
       <div class="title">
         <arrow></arrow>
         <img src="../assets/images/title@2x.png" alt />
         <arrow></arrow>
       </div>
-      <router-link tag="li" to="/introduction/part/0"></router-link>
-      <router-link tag="li" to="/introduction/part/26"></router-link>
-      <router-link tag="li" to="/introduction/part/37"></router-link>
-      <router-link tag="li" to="/introduction/part/60"></router-link>
-      <router-link tag="li" to="/introduction/part/100"></router-link>
+      <router-link tag="li" to="/part/0"></router-link>
+      <router-link tag="li" to="/part/26"></router-link>
+      <router-link tag="li" to="/part/37"></router-link>
+      <router-link tag="li" to="/part/60"></router-link>
+      <router-link tag="li" to="/part/100"></router-link>
     </div>
     <dial></dial>
   </div>
@@ -25,7 +22,6 @@ export default {
   name: "introduction",
   data() {
     return {
-      showKey: false
     };
   },
   components: { arrow, dial },
