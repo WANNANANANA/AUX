@@ -16,7 +16,7 @@
       </div>
       <div class="button" @click="back"></div>
     </div>
-    <dial></dial>
+    <!-- <dial></dial> -->
   </div>
 </template>
 <script>
@@ -26,6 +26,7 @@ export default {
   components: { dial, arrow },
   data() {
     return {
+      parent: "",
       index: 0,
       partArr: [
         {
@@ -58,7 +59,6 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    console.log(from);
     // 注意：这里面没有this 组件实例还没被创建 vm获取
     next(vm => {
       let id = to.params.id;
@@ -79,12 +79,13 @@ export default {
           vm.index = 4;
           break;
       }
+
+      if (from.path.indexOf("exhibition") == -1) {
+        vm.parent = '/introduction';
+      } else {
+        vm.parent = '/exhibition';
+      }
     });
-    if (from.path.indexOf("introduction") == -1) {
-      console.log(0);
-    } else {
-      console.log(1);
-    }
   },
   beforeRouteUpdate(to, from, next) {
     console.log(from);
@@ -110,7 +111,7 @@ export default {
         index--;
       }
       this.index = index;
-      this.$router.replace(this.partArr[this.index].path);
+      this.$router.replace(this.parent + this.partArr[this.index].path);
     },
     add() {
       let index = this.index;
@@ -120,7 +121,7 @@ export default {
         index++;
       }
       this.index = index;
-      this.$router.replace(this.partArr[this.index].path);
+      this.$router.replace(this.parent + this.partArr[this.index].path);
     }
   }
 };

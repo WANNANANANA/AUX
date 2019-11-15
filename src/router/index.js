@@ -27,19 +27,20 @@ const router = new VueRouter({
       ]
     },
     {
-      path: '/exhibition',
-      name: 'exhibition',
-      component: Exhibition
-    },
-    {
       path: '/visition',
       name: 'visition',
       component: Visition
     },
     {
-      path: '/part/:id',
-      name: 'part',
-      component: Part
+      path: '/exhibition',
+      name: 'exhibition',
+      component: Exhibition,
+      children: [
+        {
+          path: 'part/:id',
+          component: Part
+        }
+      ]
     }
   ]
 })
