@@ -1,11 +1,11 @@
 <template>
   <div class="introduction">
     <!-- 渲染或者销毁这个组件的时候发生动效 -->
-    <transition name="fade">
-      <div class="children" v-show="showKey">
+    <div class="children" v-show="showKey">
+      <transition>
         <router-view></router-view>
-      </div>
-    </transition>
+      </transition>
+    </div>
     <div class="parent" v-show="!showKey">
       <div class="title">
         <arrow></arrow>
@@ -32,6 +32,13 @@ export default {
     };
   },
   components: { arrow, dial },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      if (to.params.id !== undefined) {
+        vm.showKey = true;
+      }
+    });
+  },
   beforeRouteUpdate(to, from, next) {
     if (to.params.id) {
       this.showKey = true;
@@ -52,14 +59,14 @@ export default {
     transform: rotate(360deg);
   }
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 3s;
+.v-enter-active,
+.v-leave-active {
+  transition: all 1s;
 }
-.fade-enter,
-.fade-leave-to {
+.v-enter,
+.v-leave-to {
   opacity: 0;
-  margin-top: -200px;
+  transform: translate(0, -10%);
 }
 
 .introduction {

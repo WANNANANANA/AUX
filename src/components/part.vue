@@ -81,14 +81,14 @@ export default {
       }
 
       if (from.path.indexOf("exhibition") == -1) {
-        vm.parent = '/introduction';
+        vm.parent = "/introduction";
       } else {
-        vm.parent = '/exhibition';
+        vm.parent = "/exhibition";
       }
     });
   },
   beforeRouteUpdate(to, from, next) {
-    console.log(from);
+    console.log("part");
     next();
   },
   computed: {
@@ -128,6 +128,14 @@ export default {
 </script>
 <style lang="less">
 @import "../assets/style/common.less";
+@keyframes shine {
+  0% {
+    background-image: url('../assets/images/back_icon@2x.png');
+  }
+  100% {
+    background-image: url('../assets/images/back_icon_a@2x.png');
+  }
+}
 .part {
   .boxSet(7.4rem, 7.4rem);
   overflow: hidden;
@@ -216,6 +224,22 @@ export default {
       .boxSet(0.8rem, 0.8rem);
       background-image: url("../assets/images/back_icon@2x.png");
       background-size: 100%;
+      background-repeat: no-repeat;
+      animation: shine 1s linear infinite alternate;
+      border-radius: 50%;
+    }
+
+    &.one {
+      // background-image: url("../assets/images/title_1@2x.png");
+    }
+    &.two {
+      // background-image: url("../assets/images/title_2@2x.png");
+    }
+    &.three {
+      // background-image: url('../assets/images/title_3@2x.png');
+    }
+    &.four {
+      // background-image: url('../assets/images/title_4@2x.png');
     }
   }
 }
