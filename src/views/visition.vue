@@ -32,21 +32,6 @@ export default {
       }
   },
   components: { dial, arrow },
-  beforeRouteEnter(to, from, next) {
-    next(vm => {
-      if (to.params.id !== undefined) {
-        vm.showKey = true;
-      }
-    });
-  },
-  beforeRouteUpdate(to, from, next) {
-    if (to.params.id) {
-      this.showKey = true;
-    } else {
-      this.showKey = false;
-    }
-    next();
-  },
   methods: {
     minus() {
       if (this.index == 0) {
@@ -102,13 +87,11 @@ export default {
         z-index: 10;
       }
     }
-
     .bg {
       .boxSet();
     }
 
     &.zero {
-
       .line {
         .boxSet(3.72rem, 5.24rem);
         background-image: url("../assets/images/20min@2x.png");

@@ -22,6 +22,10 @@ export default {
     transform: translate(0, 0.3rem);
     opacity: 0;
   }
+  80% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
   100% {
     transform: translate(0, 0);
     opacity: 1;
@@ -32,7 +36,7 @@ export default {
   .boxSet(0.9rem, 0.5rem);
   &.move {
     div {
-      animation: move 1.2s linear infinite;
+      animation: move 1.5s linear infinite;
     }
   }
   div {

@@ -16,7 +16,6 @@
       </div>
       <div class="button" @click="back"></div>
     </div>
-    <!-- <dial></dial> -->
   </div>
 </template>
 <script>
