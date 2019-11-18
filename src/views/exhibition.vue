@@ -74,52 +74,64 @@ export default {
         li {
           position: absolute;
           z-index: 15;
-          background-size: 100%;
+          background-repeat: no-repeat;
         }
         .part {
           .boxSet(3rem, 0.6rem);
+          background-size: 100%;
           &:nth-of-type(1) {
             top: 0.2rem;
             left: -1.48rem;
-            background-image: url("../assets/images/37_text@2x.png");
+            background-image: url("../assets/images/part_text@2x.png");
+            background-position: 0px 0px;
           }
           &:nth-of-type(2) {
             top: 1.32rem;
             left: 1.92rem;
-            background-image: url("../assets/images/60_text@2x.png");
+            background-image: url("../assets/images/part_text@2x.png");
+            background-position: 0 -0.6rem;
           }
           &:nth-of-type(3) {
             top: 1.52rem;
             left: -1.76rem;
-            background-image: url("../assets/images/26_text@2x.png");
+            background-image: url("../assets/images/part_text@2x.png");
+            background-position: 0 -1.16rem;
           }
           &:nth-of-type(4) {
             top: 2.18rem;
             left: -1.18rem;
-            background-image: url("../assets/images/0_text@2x.png");
+            background-image: url("../assets/images/part_text@2x.png");
+            background-position: 0 -1.8rem;
           }
           &:nth-of-type(5) {
             top: 2.2rem;
             left: 1.92rem;
-            background-image: url("../assets/images/100_text@2x.png");
+            background-image: url("../assets/images/part_text@2x.png");
+            background-position: 0 -2.4rem;
           }
         }
         .hall {
           top: 3.6rem;
-          left: -1.3rem;
-          background-image: url("../assets/images/hall_text@2x.png");
+          left: -1.4rem;
+          background-size: 148%;
+          background-image: url("../assets/images/part_text@2x.png");
+          background-position: -0.46rem -2.94rem;
           .boxSet(2rem, 0.6rem);
         }
         .reception {
           top: 6rem;
           left: -1.24rem;
-          background-image: url("../assets/images/reception_text@2x.png");
+          background-size: 148%;
+          background-image: url("../assets/images/part_text@2x.png");
+          background-position: -0.48rem -4.12rem;
           .boxSet(2rem, 30px);
         }
         .aisle {
           top: 5.2rem;
           left: 1.56rem;
-          background-image: url("../assets/images/aisle_text@2x.png");
+          background-size: 148%;
+          background-image: url("../assets/images/part_text@2x.png");
+          background-position: -0.52rem -3.52rem;
           .boxSet(2rem, 0.6rem);
         }
       }
@@ -130,8 +142,9 @@ export default {
         margin-top: -1rem;
         margin-left: -0.5rem;
         .boxSet(0.42rem, 0.6rem);
-        background-image: url("../assets/images/location@2x.png");
-        background-size: 100%;
+        background-image: url("../assets/images/other_icon@2x.png");
+        background-size: 180%;
+        background-position: center -1.6rem;
         z-index: 10;
       }
     }

@@ -14,7 +14,9 @@
           <arrow></arrow>
         </div>
       </div>
-      <div class="button" @click="back"></div>
+      <div class="button" @click="back">
+        <div class="button-bg"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -129,10 +131,10 @@ export default {
 @import "../assets/style/common.less";
 @keyframes shine {
   0% {
-    background-image: url('../assets/images/back_icon@2x.png');
+    opacity: 0;
   }
   100% {
-    background-image: url('../assets/images/back_icon_a@2x.png');
+    opacity: 1;
   }
 }
 .part {
@@ -221,11 +223,17 @@ export default {
       left: 50%;
       transform: translate(-50%, 0);
       .boxSet(0.8rem, 0.8rem);
-      background-image: url("../assets/images/back_icon@2x.png");
+      background-image: url("../assets/images/other_icon@2x.png");
       background-size: 100%;
-      background-repeat: no-repeat;
-      animation: shine 1s linear infinite alternate;
+      background-position: 0px 0px;
       border-radius: 50%;
+      .button-bg {
+        .boxSet();
+        background-image: url("../assets/images/other_icon@2x.png");
+        background-size: 100%;
+        background-position: 0 2rem;
+        animation: shine 1s linear infinite alternate;
+      }
     }
 
     &.one {

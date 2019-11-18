@@ -102,27 +102,32 @@ export default {
       &:nth-of-type(1) {
         top: 0.87rem;
         left: 3.07rem;
-        background-image: url("../assets/images/0@2x.png");
+        background-image: url("../assets/images/logo_icon@2x.png");
+        background-position: 0px 0px;
       }
       &:nth-of-type(2) {
         top: 2.3rem;
         right: 0.96rem;
-        background-image: url("../assets/images/26@2x.png");
+        background-image: url("../assets/images/logo_icon@2x.png");
+         background-position: center -1.4rem;
       }
       &:nth-of-type(3) {
         bottom: 1.25rem;
         right: 1.78rem;
-        background-image: url("../assets/images/37@2x.png");
+        background-image: url("../assets/images/logo_icon@2x.png");
+         background-position: center -2.8rem;
       }
       &:nth-of-type(4) {
         bottom: 1.25rem;
         left: 1.78rem;
-        background-image: url("../assets/images/60@2x.png");
+        background-image: url("../assets/images/logo_icon@2x.png");
+         background-position: center -4.2rem;
       }
       &:nth-of-type(5) {
         top: 2.3rem;
         left: 0.96rem;
-        background-image: url("../assets/images/100@2x.png");
+        background-image: url("../assets/images/logo_icon@2x.png");
+         background-position: center -5.6rem;
       }
     }
   }

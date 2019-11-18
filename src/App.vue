@@ -92,7 +92,9 @@
 
         &:nth-of-type(1) {
           .logo {
-            background-image: url("./assets/images/introduction_logo@2x.png");
+            background-image: url("./assets/images/logo_icon@2x.png");
+            background-size: 140%;
+            background-position: center -10.8rem;
           }
           .text {
             .boxSet(2rem, 0.5rem);
@@ -100,7 +102,9 @@
           }
           &.router-link-active {
             .logo {
-              background-image: url("./assets/images/introduction_logo_a@2x.png");
+              background-image: url("./assets/images/logo_icon@2x.png");
+              background-size: 100%;
+              background-position: center -15.8rem;
             }
             .text {
               .boxSet(2.4rem, 0.5rem);
@@ -111,7 +115,9 @@
 
         &:nth-of-type(2) {
           .logo {
-            background-image: url("./assets/images/visition_logo@2x.png");
+            background-image: url("./assets/images/logo_icon@2x.png");
+            background-size: 140%;
+            background-position: center -9.3rem;
           }
           .text {
             .boxSet(1.06rem, 0.44rem);
@@ -119,7 +125,9 @@
           }
           &.router-link-active {
             .logo {
-              background-image: url("./assets/images/visition_logo_a@2x.png");
+              background-image: url("./assets/images/logo_icon@2x.png");
+              background-size: 100%;
+              background-position: center -14.2rem;
             }
             .text {
               .boxSet(1.2rem, 0.5rem);
@@ -130,7 +138,9 @@
 
         &:nth-of-type(3) {
           .logo {
-            background-image: url("./assets/images/exhibition_logo@2x.png");
+            background-image: url("./assets/images/logo_icon@2x.png");
+            background-size: 140%;
+            background-position: center -7.8rem;
           }
           .text {
             .boxSet(1.16rem, 0.44rem);
@@ -138,7 +148,9 @@
           }
           &.router-link-active {
             .logo {
-              background-image: url("./assets/images/exhibition_logo_a@2x.png");
+              background-image: url("./assets/images/logo_icon@2x.png");
+              background-size: 100%;
+              background-position: center -12.6rem;
             }
             .text {
               .boxSet(1.4rem, 0.5rem);

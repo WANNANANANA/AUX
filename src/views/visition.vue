@@ -83,7 +83,9 @@ export default {
         margin-top: -0.8rem;
         margin-left: -0.8rem;
         .boxSet(0.42rem, 0.6rem);
-        background-image: url("../assets/images/location@2x.png");
+        background-image: url("../assets/images/other_icon@2x.png");
+        background-size: 180%;
+        background-position: center -1.6rem;
         z-index: 10;
       }
     }
