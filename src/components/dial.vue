@@ -13,9 +13,19 @@ export default {
 </script>
 <style lang="less">
 @import "../assets/style/common.less";
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .dial {
   position: relative;
   .boxSet();
+  overflow: hidden;
   .circle {
     .boxSet();
     position: absolute;

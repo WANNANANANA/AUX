@@ -7,11 +7,11 @@
       </div>
       <div class="des">
         <div class="change" @click="minus">
-          <arrow :move="false"></arrow>
+          <arrow></arrow>
         </div>
         <p>{{text}}</p>
         <div class="change" @click="add">
-          <arrow :move="false"></arrow>
+          <arrow></arrow>
         </div>
       </div>
       <div class="button" @click="back"></div>

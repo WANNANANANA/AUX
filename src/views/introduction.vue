@@ -47,18 +47,10 @@ export default {
     }
     next();
   }
-};
+}
 </script>
 <style lang="less">
 @import "../assets/style/common.less";
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .v-enter-active,
 .v-leave-active {
   transition: all 1s;

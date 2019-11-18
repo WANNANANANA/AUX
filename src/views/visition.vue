@@ -1,95 +1,166 @@
 <template>
   <div class="visition">
-    <!-- <div id="box"></div> -->
+    <div class="center" :class="className">
+      <div class="line"></div>
+      <div class="text"></div>
+      <div class="location"></div>
+      <img class="bg" src="../assets/images/visition_bg@2x.png" alt />
+    </div>
+    <div class="button left" @click="minus">
+      <arrow></arrow>
+    </div>
+    <div class="button right" @click="add">
+      <arrow></arrow>
+    </div>
+    <dial></dial>
   </div>
 </template>
 <script>
+import dial from "../components/dial";
+import arrow from "../components/arrow";
 export default {
-//   mounted() {
-//     var box = document.getElementById("box"); //获取指针元素
-//     var initAngle = 0;
-//     var nowAngle = 0;
-//     //触摸事件
-//     function touches(e) {
-//       var ev = window.event || event;
-//       switch (ev.type) {
-//         case "touchstart": // 刚触摸时 // 先求初始角度
-//           var ox = ev.touches[0].clientX;
-//           var oy = ev.touches[0].clientY;
-//           initAngle = getAngle(ox, oy);
-//           nowAngle = box.style.transform ? parseInt(box.style.transform.match(/[0-9]{1,3}(deg)/)[0]) : nowAngle;
-
-//           box.addEventListener("touchmove", touches, false);
-//           break;
-//         case "touchend":
-//           box.removeEventListener("touchmove", touches, false);
-//           box.removeEventListener("touchend", touches, false);
-//           break;
-//         case "touchmove":    
-//           var endAngle = getAngle(
-//             ev.changedTouches[0].clientX,
-//             ev.changedTouches[0].clientY
-//           ); // 传入此时鼠标的坐标点\
-//           box.style.transform = "rotate(" + (endAngle - initAngle + nowAngle) + "deg)";
-//           break;
-//       }
-//     }
-//     box.addEventListener("touchstart", touches, false);
-
-//     function getAngle(mx, my) {
-//       var px = 187.5;
-//       var py = 333.5; // 旋转物以中心点为坐标进行旋转 鼠标也以这个点作为中心
-//       var x = Math.abs(px - mx); // Math.abs 绝对值
-//       var y = Math.abs(py - my);
-//       var z = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)); // x的2次方 y的2次方 相加求平方根
-//       var cos = y / z;
-//       var radina = Math.acos(cos); //用反三角函数求弧度
-//       var angle = Math.floor(180 / (Math.PI / radina)); //将弧度转换成角度
-
-//       if (mx > px && my > py) {
-//         //鼠标在第四象限
-//         angle = 180 - angle;
-//       }
-
-//       if (mx == px && my > py) {
-//         //鼠标在y轴负方向上
-//         angle = 180;
-//       }
-
-//       if (mx > px && my == py) {
-//         //鼠标在x轴正方向上
-//         angle = 90;
-//       }
-
-//       if (mx < px && my > py) {
-//         //鼠标在第三象限
-//         angle = 180 + angle;
-//       }
-
-//       if (mx < px && my == py) {
-//         //鼠标在x轴负方向
-//         angle = 270;
-//       }
-
-//       if (mx < px && my < py) {
-//         //鼠标在第二象限
-//         angle = 360 - angle;
-//       }
-//       return angle;
-//     }
-//   }
+  name: "visition",
+  data() {
+    return {
+      index: 0,
+      classArr: ['zero', 'one', 'two']
+    };
+  },
+  computed: {
+      className() {
+        return this.classArr[this.index]
+      }
+  },
+  components: { dial, arrow },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      if (to.params.id !== undefined) {
+        vm.showKey = true;
+      }
+    });
+  },
+  beforeRouteUpdate(to, from, next) {
+    if (to.params.id) {
+      this.showKey = true;
+    } else {
+      this.showKey = false;
+    }
+    next();
+  },
+  methods: {
+    minus() {
+      if (this.index == 0) {
+        this.index = 2;
+      } else {
+        this.index--;
+      }
+    },
+    add() {
+      if (this.index == 2) {
+        this.index = 0;
+      } else {
+        this.index++;
+      }
+    }
+  }
 };
 </script>
 <style lang="less">
-#box {
-  width: 150px;
-  height: 150px;
-  border-top: 6px solid red;
-  border-left: 6px solid blue;
-  border-bottom: 6px solid orange;
-  border-right: 6px solid black;
-  border-radius: 50%;
-  margin: 0 auto;
-  transform-origin: center center;
+@import "../assets/style/common.less";
+
+.visition {
+  position: relative;
+  .boxSet(7.4rem, 7.4rem);
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    .boxSet(2.76rem, 8.24rem);
+    div {
+      position: absolute;
+      background-size: 100%;
+      &.line {
+        top: 0.16rem;
+        left: -1.28rem;
+        z-index: 9;
+      }
+      &.text {
+        top: 2rem;
+        left: -1.4rem;
+        .boxSet(2rem, 0.8rem);
+        z-index: 11;
+      }
+      &.location {
+        top: 50%;
+        left: 50%;
+        margin-top: -0.8rem;
+        margin-left: -0.8rem;
+        .boxSet(0.42rem, 0.6rem);
+        background-image: url("../assets/images/location@2x.png");
+        z-index: 10;
+      }
+    }
+
+    .bg {
+      .boxSet();
+    }
+
+    &.zero {
+
+      .line {
+        .boxSet(3.72rem, 5.24rem);
+        background-image: url("../assets/images/20min@2x.png");
+      }
+      .text {
+        background-image: url("../assets/images/20min_text@2x.png");
+      }
+    }
+    &.one {
+      .line {
+        .boxSet(3.96rem, 5.2rem);
+        background-image: url("../assets/images/40min@2x.png");
+      }
+      .text {
+        background-image: url("../assets/images/40min_text@2x.png");
+      }
+    }
+    &.two {
+      .line {
+        .boxSet(4.04rem, 6.06rem);
+        background-image: url("../assets/images/60min@2x.png");
+      }
+      .text {
+        background-image: url("../assets/images/60min_text@2x.png");
+      }
+    }
+  }
+  .button {
+    position: absolute;
+    z-index: 15;
+    width: 1.08rem;
+    height: 0.9rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    &.left {
+      left: 0.8rem;
+      .arrow {
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: rotateZ(-90deg);
+      }
+    }
+    &.right {
+      right: 0.8rem;
+      .arrow {
+        top: 0;
+        right: 0;
+        height: 100%;
+        transform: rotateZ(90deg);
+      }
+    }
+  }
 }
 </style>
