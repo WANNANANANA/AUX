@@ -74,20 +74,18 @@ export default {
     img {
       position: absolute;
       display: none;
+      width: 4.5rem;
       &.two-line {
-        top: 0.08rem;
-        left: -1.52rem;
-        width: 4.28rem;
+        top: 0.06rem;
+        left: -1.7rem;
       }
       &.four-line {
-        width: 4.5rem;
+        top: 0.04rem;
         left: -1.52rem;
-        top: .04rem;
       }
       &.six-line {
-        width: 4.5rem;
+        top: 0.06rem;
         left: -1.52rem;
-        top: .08rem;
       }
     }
     div {
@@ -141,7 +139,7 @@ export default {
     }
     &.two {
       .six-line {
-        display:inline-block;
+        display: inline-block;
       }
       .text {
         background-position: center -1.62rem;
