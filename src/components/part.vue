@@ -21,10 +21,9 @@
   </div>
 </template>
 <script>
-import dial from "../components/dial";
 import arrow from "../components/arrow";
 export default {
-  components: { dial, arrow },
+  components: { arrow },
   data() {
     return {
       parent: "",

@@ -9,7 +9,7 @@
     <div class="parent" v-show="!showKey">
       <div class="title">
         <arrow></arrow>
-        <img src="../assets/images/title@2x.png" alt />
+        <span class="img"></span>
         <arrow></arrow>
       </div>
       <router-link tag="li" to="introduction/part/0"></router-link>
@@ -18,12 +18,10 @@
       <router-link tag="li" to="introduction/part/60"></router-link>
       <router-link tag="li" to="introduction/part/100"></router-link>
     </div>
-    <dial></dial>
   </div>
 </template>
 <script>
 import arrow from "../components/arrow";
-import dial from "../components/dial";
 export default {
   name: "introduction",
   data() {
@@ -31,11 +29,13 @@ export default {
       showKey: false
     };
   },
-  components: { arrow, dial },
+  components: { arrow },
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (to.params.id !== undefined) {
         vm.showKey = true;
+      } else { // 当使用了keep-alive的情况下 这个就很重要 因为router离开当前路由组件时该组件不会进行销毁 数据不会重新渲染
+        vm.showKey = false;
       }
     });
   },
@@ -76,8 +76,11 @@ export default {
       left: 50%;
       z-index: 8;
       transform: translate(-50%, -50%);
-      img {
+      .img {
+        display: inline-block;
         .boxSet(3.08rem, 2.12rem);
+        background-image: url('../assets/images/title@2x.png');
+        background-size: 100%;
       }
       .arrow {
         left: 50%;

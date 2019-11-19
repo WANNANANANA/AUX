@@ -2,7 +2,10 @@
   <div id="app">
     <header></header>
     <main>
-      <router-view />
+      <dial></dial>
+      <keep-alive exclude="visition">
+        <router-view />
+      </keep-alive>
     </main>
     <footer>
       <ul>
@@ -22,6 +25,13 @@
     </footer>
   </div>
 </template>
+<script>
+import dial from "./components/dial"
+export default {
+  name: "App",
+  components: { dial }
+};
+</script>
 
 <style lang="less">
 @import "./assets/style/common.less";
@@ -57,6 +67,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 0;
+    .dial {
+      position: absolute;
+      .boxSet();
+    }
   }
   footer {
     position: fixed;
@@ -98,7 +112,9 @@
           }
           .text {
             .boxSet(2rem, 0.5rem);
-            background-image: url("./assets/images/introduction_text@2x.png");
+            background-image: url("./assets/images/footer_text@2x.png");
+            background-size: 96%;
+            background-position: center -0.06rem;
           }
           &.router-link-active {
             .logo {
@@ -107,8 +123,9 @@
               background-position: center -15.8rem;
             }
             .text {
-              .boxSet(2.4rem, 0.5rem);
-              background-image: url("./assets/images/introduction_text_a@2x.png");
+              .boxSet(100%, 0.5rem);
+              background-image: url("./assets/images/footer_text@2x.png");
+              background-position: center -0.92rem;
             }
           }
         }
@@ -121,7 +138,9 @@
           }
           .text {
             .boxSet(1.06rem, 0.44rem);
-            background-image: url("./assets/images/visition_text@2x.png");
+            background-image: url("./assets/images/footer_text@2x.png");
+            background-size: 130%;
+            background-position: center -0.96rem;
           }
           &.router-link-active {
             .logo {
@@ -131,7 +150,9 @@
             }
             .text {
               .boxSet(1.2rem, 0.5rem);
-              background-image: url("./assets/images/visition_text_a@2x.png");
+              background-image: url("./assets/images/footer_text@2x.png");
+              background-size: 110%;
+              background-position: center -1.36rem;
             }
           }
         }
@@ -144,7 +165,9 @@
           }
           .text {
             .boxSet(1.16rem, 0.44rem);
-            background-image: url("./assets/images/exhibition_text@2x.png");
+            background-image: url("./assets/images/footer_text@2x.png");
+            background-size: 120%;
+            background-position: center -1.92rem;
           }
           &.router-link-active {
             .logo {
@@ -154,7 +177,9 @@
             }
             .text {
               .boxSet(1.4rem, 0.5rem);
-              background-image: url("./assets/images/exhibition_text_a@2x.png");
+              background-image: url("./assets/images/footer_text@2x.png");
+              background-size: 100%;
+              background-position: center -2.4rem;
             }
           }
         }

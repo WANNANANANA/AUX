@@ -18,10 +18,9 @@
           <li class="aisle"></li>
         </ul>
         <div class="location"></div>
-        <img class="bg" src="../assets/images/exhibition_bg@2x.png" alt />
+        <span class="bg"></span>
       </div>
     </div>
-    <dial></dial>
   </div>
 </template>
 <script>
@@ -34,11 +33,13 @@ export default {
       showKey: false
     };
   },
-  components: { dial, arrow },
+  components: { arrow },
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (to.params.id !== undefined) {
         vm.showKey = true;
+      } else {
+        vm.showKey = false;
       }
     });
   },
@@ -150,7 +151,11 @@ export default {
     }
 
     .bg {
+      display: inline-block;
       .boxSet();
+      background-image: url('../assets/images/exhibition_bg@2x.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
   }
 }

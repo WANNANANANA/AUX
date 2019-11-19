@@ -1,10 +1,13 @@
 <template>
   <div class="visition">
+    <div></div>
     <div class="center" :class="className">
-      <div class="line"></div>
+      <img :src="twoLine" alt class="two-line" />
+      <img :src="fourLine" alt class="four-line" />
+      <img :src="sixLine" alt class="six-line" />
       <div class="text"></div>
       <div class="location"></div>
-      <img class="bg" src="../assets/images/visition_bg@2x.png" alt />
+      <span class="bg"></span>
     </div>
     <div class="button left" @click="minus">
       <arrow></arrow>
@@ -12,26 +15,31 @@
     <div class="button right" @click="add">
       <arrow></arrow>
     </div>
-    <dial></dial>
   </div>
 </template>
 <script>
 import dial from "../components/dial";
 import arrow from "../components/arrow";
+import twoLine from "../assets/images/20min@2x.gif";
+import fourLine from "../assets/images/40min@2x.gif";
+import sixLine from "../assets/images/60min@2x.gif";
 export default {
   name: "visition",
   data() {
     return {
       index: 0,
-      classArr: ['zero', 'one', 'two']
+      classArr: ["zero", "one", "two"],
+      twoLine,
+      fourLine,
+      sixLine
     };
   },
   computed: {
-      className() {
-        return this.classArr[this.index]
-      }
+    className() {
+      return this.classArr[this.index];
+    }
   },
-  components: { dial, arrow },
+  components: { arrow },
   methods: {
     minus() {
       if (this.index == 0) {
@@ -63,19 +71,35 @@ export default {
     transform: translate(-50%, -50%);
     z-index: 8;
     .boxSet(2.76rem, 8.24rem);
+    img {
+      position: absolute;
+      display: none;
+      &.two-line {
+        top: 0.08rem;
+        left: -1.52rem;
+        width: 4.28rem;
+      }
+      &.four-line {
+        width: 4.5rem;
+        left: -1.52rem;
+        top: .04rem;
+      }
+      &.six-line {
+        width: 4.5rem;
+        left: -1.52rem;
+        top: .08rem;
+      }
+    }
     div {
       position: absolute;
       background-size: 100%;
-      &.line {
-        top: 0.16rem;
-        left: -1.28rem;
-        z-index: 9;
-      }
       &.text {
         top: 2rem;
         left: -1.4rem;
-        .boxSet(2rem, 0.8rem);
+        .boxSet(2rem, 0.84rem);
         z-index: 11;
+        background-size: 98%;
+        background-repeat: no-repeat;
       }
       &.location {
         top: 50%;
@@ -90,34 +114,38 @@ export default {
       }
     }
     .bg {
+      display: inline-block;
       .boxSet();
+      background-image: url("../assets/images/visition_bg@2x.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
 
     &.zero {
-      .line {
-        .boxSet(3.72rem, 5.24rem);
-        background-image: url("../assets/images/20min@2x.png");
+      .two-line {
+        display: inline-block;
       }
       .text {
-        background-image: url("../assets/images/20min_text@2x.png");
+        background-position: center 0.02rem;
+        background-image: url("../assets/images/min_text@2x.png");
       }
     }
     &.one {
-      .line {
-        .boxSet(3.96rem, 5.2rem);
-        background-image: url("../assets/images/40min@2x.png");
+      .four-line {
+        display: inline-block;
       }
       .text {
-        background-image: url("../assets/images/40min_text@2x.png");
+        background-position: center -0.8rem;
+        background-image: url("../assets/images/min_text@2x.png");
       }
     }
     &.two {
-      .line {
-        .boxSet(4.04rem, 6.06rem);
-        background-image: url("../assets/images/60min@2x.png");
+      .six-line {
+        display:inline-block;
       }
       .text {
-        background-image: url("../assets/images/60min_text@2x.png");
+        background-position: center -1.62rem;
+        background-image: url("../assets/images/min_text@2x.png");
       }
     }
   }
