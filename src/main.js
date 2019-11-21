@@ -29,31 +29,28 @@ function successFun(data) {
     timestamp: timestamp,
     nonceStr: noncestr,
     signature: signature,
-    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareQZone'],
+    // JSSDK 1.4.0以上版本支持
+    jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
   });
 
   wx.ready(function () {
     var shareData = {
-      title: '奧克斯H5', //分享标题  todo
-      desc: '这个是奥克斯项目', // 分享描述   todo
-      link: link, // 分享链接   todo 微信
-      imgUrl: logo, //分享图片   todo
+      title: '奧克斯', // 分享标题  
+      desc: '奥克斯导览系统', // 分享描述   
+      link: link, // 分享链接   
+      imgUrl: logo, // 分享图片 
       success: function () {
         return false;
       },
       cancel: function () {
-        //用户取消
+        return false;
       }
     };
 
-    //分享给朋友
-    wx.onMenuShareAppMessage(shareData);
-    //分享到朋友圈
-    wx.onMenuShareTimeline(shareData);
-    //分享给QQ好友
-    wx.onMenuShareQQ(shareData);
-    //分享到QQ空间
-    wx.onMenuShareQZone(shareData);
+    //  分享给朋友及分享到QQ
+    wx.updateAppMessageShareData(shareData);
+    // 分享到朋友圈及分享到QQ空间
+    wx.updateTimelineShareData(shareData);
   })
 }
 
