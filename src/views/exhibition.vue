@@ -125,7 +125,7 @@ export default {
           background-size: 148%;
           background-image: url("../assets/images/part_text@2x.png");
           background-position: -0.48rem -4.12rem;
-          .boxSet(2rem, 30px);
+          .boxSet(2rem, .6rem);
         }
         .aisle {
           top: 5.2rem;
