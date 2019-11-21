@@ -70,7 +70,7 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 8;
-    .boxSet(2.76rem, 8.24rem);
+    .boxSet(2.76rem, 7.6rem);
     img {
       position: absolute;
       display: none;
