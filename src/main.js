@@ -7,8 +7,6 @@ import logo from './assets/images/logo.jpg'
 import 'script-loader!./assets/js/wx'
 import { ajax } from './assets/js/ajax'
 
-console.log(logo);
-
 Vue.config.productionTip = false
 
 new Vue({
@@ -39,7 +37,7 @@ function successFun(data) {
       title: '奧克斯H5', //分享标题  todo
       desc: '这个是奥克斯项目', // 分享描述   todo
       link: link, // 分享链接   todo 微信
-      imgUrl: 'http://www.huizhangongsi.com/auxTest/img/logo.jpg', //分享图片   todo
+      imgUrl: logo, //分享图片   todo
       success: function () {
         return false;
       },
@@ -59,6 +57,4 @@ function successFun(data) {
   })
 }
 
-console.log(ajax);
-
-ajax({ url: 'http://www.huizhangongsi.com/auxTest/wx_api/api.php', ajaxData: { url: link }, success: successFun });
+ajax({ url: './wx_api/api.php', ajaxData: { url: link }, success: successFun });
