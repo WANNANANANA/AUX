@@ -9,7 +9,9 @@
         <div class="change" @click="minus">
           <arrow></arrow>
         </div>
-        <p>{{text}}</p>
+        <ul class="desWord">
+          <li v-for="(item, index) in text" :key="index">{{item}}</li>
+        </ul>
         <div class="change" @click="add">
           <arrow></arrow>
         </div>
@@ -32,28 +34,47 @@ export default {
         {
           class: "zero",
           path: "/part/0",
-          text:
-            "为了更好地满足功能需求，依据空间特性，每层都承载了各自的主要任务及具体功能。首层是品牌形象与新产品、主打产品抛光砖的主要展示场所，表达个性风格是这个空间的关键。利用地面折线风格跑道的表现与背景形象的鲜明颜色相互配合产生强烈视觉冲击效果，令人耳目一新，印象深刻。开阔的顾客休息洽谈区结合墙面产品形象展示，传达出其功能主题。"
+          text: [
+            "打破界限，抢抓机遇，快速实现从0到亿的跨越；",
+            "企业高度：崛起于阡陌，成长于自强，腾飞于转型；",
+            "战略高度：医疗健康、互联网智能化、国际化三大战略。"
+          ]
         },
         {
           class: "one",
           path: "/part/26",
-          text: "这个是第二段"
+          text: [
+            "温度的控制，健康的呵护，开启有温度的智能生活；",
+            "健康温度：感知生活最舒适的室温；",
+            "智能温度：匠心调控最智能的温度。"
+          ]
         },
         {
           class: "two",
           path: "/part/37",
-          text: "这个是第三段"
+          text: [
+            "精选有态度产品，享受品质美好生活；",
+            "积极态度：积极的态度面对生活；",
+            "品质态度：展有态度的优质产品。"
+          ]
         },
         {
           class: "three",
           path: "/part/60",
-          text: "这个是第四段"
+          text: [
+            "看不见的大数据，看得见的创新智能；",
+            "眼界视度：全球布局的视野，让奥克斯成为世界品牌；",
+            "云上视度：大数据云端管理，掌控全产业生态链。"
+          ]
         },
         {
           class: "four",
           path: "/part/100",
-          text: "这个是第五段"
+          text: [
+            "安全的步伐速达未来；",
+            "战略速度：“千亿市值、千亿规模、百亿利润”",
+            "研发速度：节能、环保、舒适、智能的科研之路。"
+          ]
         }
       ]
     };
@@ -197,22 +218,25 @@ export default {
           }
         }
       }
-      p {
-        .boxSet();
-        .fontSet(0.22rem, #fff);
-        line-height: 0.4rem;
-        letter-spacing: 0.5px;
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-          width: 0.06rem;
-        }
-        &::-webkit-scrollbar-thumb {
-          border-radius: 10px;
-          background: #fff;
-        }
-        &::-webkit-scrollbar-track {
-          border-radius: 10px;
-          background: rgb(92, 91, 91);
+      .desWord {
+        li {
+          margin-top: .1rem;
+          .boxSet();
+          .fontSet(0.22rem, #fff);
+          line-height: 0.4rem;
+          letter-spacing: 0.5px;
+          overflow-y: auto;
+          &::-webkit-scrollbar {
+            width: 0.06rem;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #fff;
+          }
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: rgb(92, 91, 91);
+          }
         }
       }
     }
