@@ -173,11 +173,12 @@ export default {
 
     .title {
       position: absolute;
-      top: 0.42rem;
+      top: 0.4rem;
       left: 50%;
       transform: translate(-50%, 0);
-      .boxSet(3.9rem, 0.64rem);
-      background-image: url("../assets/images/title_0@2x.png");
+      .boxSet(3.9rem, 0.72rem);
+      background-image: url("../assets/images/part_title@2x.png");
+      background-position: 0px 0px;
       background-size: 100%;
       .arrow {
         left: 50%;
@@ -220,7 +221,7 @@ export default {
       }
       .desWord {
         li {
-          margin-top: .1rem;
+          margin-top: 0.1rem;
           .boxSet();
           .fontSet(0.22rem, #fff);
           line-height: 0.4rem;
@@ -259,17 +260,17 @@ export default {
       }
     }
 
-    &.one {
-      // background-image: url("../assets/images/title_1@2x.png");
+    &.one .title {
+      background-position: 0 -0.72rem;
     }
-    &.two {
-      // background-image: url("../assets/images/title_2@2x.png");
+    &.two .title {
+      background-position: 0 -1.44rem;
     }
-    &.three {
-      // background-image: url('../assets/images/title_3@2x.png');
+    &.three .title {
+      background-position: 0 -2.16rem;
     }
-    &.four {
-      // background-image: url('../assets/images/title_4@2x.png');
+    &.four .title {
+      background-position: 0 -2.88rem;
     }
   }
 }
