@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     outputDir: 'dist',
-    publicPath: 'http://www.huizhangongsi.com/auxPro/',
+    // publicPath: 'http://www.huizhangongsi.com/auxPro/',
     devServer: {
         port: 8888,
         open: true

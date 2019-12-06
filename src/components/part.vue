@@ -101,7 +101,7 @@ export default {
           break;
       }
 
-      if (from.path.indexOf("exhibition") == -1) {
+      if (to.path.indexOf("exhibition") == -1) {
         vm.parent = "/introduction";
       } else {
         vm.parent = "/exhibition";
@@ -109,7 +109,6 @@ export default {
     });
   },
   beforeRouteUpdate(to, from, next) {
-    console.log("part");
     next();
   },
   computed: {
@@ -174,7 +173,7 @@ export default {
     .title {
       position: absolute;
       top: 0.4rem;
-      left: 50%;
+      left: 54%;
       transform: translate(-50%, 0);
       .boxSet(3.9rem, 0.72rem);
       background-image: url("../assets/images/part_title@2x.png");
