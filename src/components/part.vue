@@ -173,11 +173,11 @@ export default {
     .title {
       position: absolute;
       top: 0.4rem;
-      left: 54%;
+      left: 50%;
       transform: translate(-50%, 0);
       .boxSet(3.9rem, 0.72rem);
       background-image: url("../assets/images/part_title@2x.png");
-      background-position: 0px 0px;
+      background-position: .2rem 0px;
       background-size: 100%;
       .arrow {
         left: 50%;
@@ -260,16 +260,16 @@ export default {
     }
 
     &.one .title {
-      background-position: 0 -0.72rem;
+      background-position-y: -0.72rem;
     }
     &.two .title {
-      background-position: 0 -1.44rem;
+      background-position-y: -1.44rem;
     }
     &.three .title {
-      background-position: 0 -2.16rem;
+      background-position-y: -2.16rem;
     }
     &.four .title {
-      background-position: 0 -2.88rem;
+      background-position-y: -2.88rem;
     }
   }
 }
