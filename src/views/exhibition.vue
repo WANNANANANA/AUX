@@ -8,10 +8,10 @@
     <div class="parent" v-show="!showKey">
       <div class="center">
         <ul class="text">
-          <router-link tag="li" class="part" to="exhibition/part/0"></router-link>
-          <router-link tag="li" class="part" to="exhibition/part/26"></router-link>
           <router-link tag="li" class="part" to="exhibition/part/37"></router-link>
           <router-link tag="li" class="part" to="exhibition/part/60"></router-link>
+          <router-link tag="li" class="part" to="exhibition/part/26"></router-link>
+          <router-link tag="li" class="part" to="exhibition/part/0"></router-link>
           <router-link tag="li" class="part" to="exhibition/part/100"></router-link>
           <li class="hall"></li>
           <li class="reception"></li>

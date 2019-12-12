@@ -8,9 +8,9 @@
 date_default_timezone_set('PRC');
 
 $wx_arr = [
-    'redirect_url'  => 'http://www.huizhangongsi.com/auxTest/', //回调地址 填写自己的网址 todo
-    'app_id' => 'wxc3d2077e367b9d2a', //正式  todo
-    'app_secret' => 'e6e58f3cc842ae4886d17640a4adf011', //正式  todo
+    'redirect_url'  => 'http://www.huizhangongsi.com/auxPro/', 
+    'app_id' => 'wxc3d2077e367b9d2a', 
+    'app_secret' => 'e6e58f3cc842ae4886d17640a4adf011',
     'authority_url' => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect', //授权URL
     'at_url'        => 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code', //授权登录获取access_token
     'userinfo_url'  => 'https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN',
