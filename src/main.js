@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './assets/js/self-adaption'
 import './assets/style/reset.css'
 import logo from './assets/images/logo.jpg'
 import 'script-loader!./assets/js/wx'
