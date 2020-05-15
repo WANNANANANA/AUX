@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header></header>
+    <header :style="{animationPlayState: aniState}"></header>
     <main>
       <dial></dial>
       <keep-alive exclude="visition">
@@ -26,10 +26,21 @@
   </div>
 </template>
 <script>
-import dial from "./components/dial"
+import dial from "./components/dial";
 export default {
   name: "App",
-  components: { dial }
+  components: { dial },
+  data() {
+    return {
+      aniState: 'paused'
+    }
+  },
+  mounted() {
+    window.onload = () => {
+      document.getElementById("page-loading").className = "hide";
+      this.aniState = 'running';
+    };
+  }
 };
 </script>
 
@@ -48,9 +59,6 @@ export default {
 #app {
   position: relative;
   .boxSet();
-  background-image: url("./assets/images/bg@2x.png");
-  background-size: cover;
-  background-position: center bottom;
   header {
     position: fixed;
     top: 0px;

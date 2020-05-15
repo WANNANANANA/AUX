@@ -8,7 +8,6 @@ import Part from '../components/part'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  // mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -41,11 +40,7 @@ const router = new VueRouter({
           component: Part
         }
       ]
-    },
-    // {
-    //   path: '*',
-    //   redirect: '/introduction'
-    // }
+    }
   ]
 })
 

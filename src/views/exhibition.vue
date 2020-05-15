@@ -13,6 +13,7 @@
           <router-link tag="li" class="part" to="exhibition/part/26"></router-link>
           <router-link tag="li" class="part" to="exhibition/part/0"></router-link>
           <router-link tag="li" class="part" to="exhibition/part/100"></router-link>
+          <li class="building"></li>
           <li class="hall"></li>
           <li class="reception"></li>
           <li class="aisle"></li>
@@ -75,6 +76,7 @@ export default {
         li {
           position: absolute;
           z-index: 15;
+          background-image: url("../assets/images/part_text@2x.png");
           background-repeat: no-repeat;
         }
         .part {
@@ -83,56 +85,55 @@ export default {
           &:nth-of-type(1) {
             top: 0.2rem;
             left: -1.48rem;
-            background-image: url("../assets/images/part_text@2x.png");
             background-position: 0px 0px;
           }
           &:nth-of-type(2) {
-            top: 1.32rem;
+            top: 1.34rem;
             left: 1.92rem;
-            background-image: url("../assets/images/part_text@2x.png");
-            background-position: 0 -0.6rem;
+            background-position: 0 -0.74rem;
           }
           &:nth-of-type(3) {
             top: 1.52rem;
             left: -1.76rem;
-            background-image: url("../assets/images/part_text@2x.png");
-            background-position: 0 -1.16rem;
+            background-position: 0 -1.42rem;
           }
           &:nth-of-type(4) {
             top: 2.18rem;
             left: -1.18rem;
-            background-image: url("../assets/images/part_text@2x.png");
-            background-position: 0 -1.8rem;
+            background-position: 0 -2.14rem;
           }
           &:nth-of-type(5) {
             top: 2.2rem;
             left: 1.92rem;
-            background-image: url("../assets/images/part_text@2x.png");
-            background-position: 0 -2.4rem;
+            background-position: 0 -2.85rem;
           }
+        }
+        .building {
+          top: 3.4rem;
+          left: 2.4rem;
+          background-size: 148%;
+          background-position: -0.52rem -5.56rem;
+          .boxSet(2rem, 0.6rem);
         }
         .hall {
           top: 3.6rem;
           left: -1.4rem;
           background-size: 148%;
-          background-image: url("../assets/images/part_text@2x.png");
-          background-position: -0.46rem -2.94rem;
+          background-position: -0.52rem -3.52rem;
           .boxSet(2rem, 0.6rem);
         }
         .reception {
           top: 6rem;
           left: -1.24rem;
           background-size: 148%;
-          background-image: url("../assets/images/part_text@2x.png");
-          background-position: -0.48rem -4.12rem;
-          .boxSet(2rem, .6rem);
+          background-position: -0.48rem -4.88rem;
+          .boxSet(2rem, 0.6rem);
         }
         .aisle {
           top: 5.2rem;
           left: 1.56rem;
           background-size: 148%;
-          background-image: url("../assets/images/part_text@2x.png");
-          background-position: -0.52rem -3.52rem;
+          background-position: -0.52rem -4.16rem;
           .boxSet(2rem, 0.6rem);
         }
       }
@@ -153,7 +154,7 @@ export default {
     .bg {
       display: inline-block;
       .boxSet();
-      background-image: url('../assets/images/exhibition_bg@2x.png');
+      background-image: url("../assets/images/exhibition_bg@2x.png");
       background-size: 100%;
       background-repeat: no-repeat;
     }

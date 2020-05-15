@@ -10,7 +10,6 @@ module.exports = {
         plugins: [
             new CopyWebpackPlugin([
                 { from: path.join(__dirname, 'src/wx_api'), to: path.join(__dirname, 'dist/wx_api') },
-                { from: path.join(__dirname, 'src/.idea'), to: path.join(__dirname, 'dist/.idea') },
                 { from: path.join(__dirname, 'src/assets/js/self-adaption.js'), to: path.join(__dirname, 'dist/self-adaption.js') }
             ])
         ]
