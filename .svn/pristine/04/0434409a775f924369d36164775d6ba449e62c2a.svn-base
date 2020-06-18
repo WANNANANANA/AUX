@@ -21,8 +21,8 @@
 
     body {
       background-image: url('./bg@2x.jpg');
-      background-size: auto 100%;
-      background-position: center center;
+      background-size: 100%;
+      background-position: center top;
     }
 
     #page-loading {
