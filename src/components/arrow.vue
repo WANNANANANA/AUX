@@ -42,7 +42,7 @@ export default {
   div {
     position: absolute;
     .boxSet();
-    background-image: url("../assets/images/arrow@2x.png");
+    background-image: url("../assets/images/arrow.png");
     background-position: center center;
     background-repeat: no-repeat;
     &:nth-of-type(1) {

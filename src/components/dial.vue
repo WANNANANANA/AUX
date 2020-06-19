@@ -34,18 +34,18 @@ export default {
     &.circle-out {
       z-index: 1;
       background-size: 100% 100%;
-      background-image: url("../assets/images/circle_out@2x.png");
+      background-image: url("../assets/images/circle_out.png");
       animation: rotate 30s linear infinite;
     }
     &.circle-center {
       z-index: 2;
       background-size: 96% 96%;
-      background-image: url("../assets/images/circle_center@2x.png");
+      background-image: url("../assets/images/circle_center.png");
     }
     &.circle-in {
       z-index: 3;
       background-size: 86% 86%;
-      background-image: url("../assets/images/circle_in@2x.png");
+      background-image: url("../assets/images/circle_in.png");
       animation: rotate 30s linear infinite;
     }
   }
