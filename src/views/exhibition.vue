@@ -78,8 +78,8 @@ export default {
       &:nth-of-type(7) {
         top: 150px;
         right: 40px;
-        width: 76px;
-        height: 106px;
+        width: 1.52rem;
+        height: 2.12rem;
         background: none;
       }
     }

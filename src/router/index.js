@@ -10,10 +10,6 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/introduction'
-    },
-    {
-      path: '/introduction',
       name: 'introduction',
       component: Introduction
     },

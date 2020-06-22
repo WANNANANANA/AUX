@@ -31,7 +31,7 @@
     </main>
     <footer>
       <ul>
-        <router-link to="/introduction" tag="li"></router-link>
+        <router-link to="/" tag="li"></router-link>
         <router-link to="/exhibition" tag="li"></router-link>
         <li>
           <a
@@ -142,6 +142,7 @@ export default {
     opacity: 1;
   }
 }
+
 #app {
   display: flex;
   flex-direction: column;
@@ -165,7 +166,7 @@ export default {
       .topLeft(@top:50%, @left:50%, @index: 20);
       transform: translate(-50%, -50%);
       width: 88%;
-      padding: 6%;
+      padding: 4%;
       background-image: url("./assets/images/part_bg.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
@@ -182,7 +183,7 @@ export default {
           }
           .img {
             position: relative;
-            width: 100%;
+            width: 88%;
             img {
               width: 100%;
               padding: 8%;
@@ -198,32 +199,32 @@ export default {
           }
           &.content1 {
             .title {
-              background-position: 0.2rem -0.2rem;
+              background-position: center -0.2rem;
             }
           }
           &.content2 {
             .title {
-              background-position: 0.2rem -1.12rem;
+              background-position: center -1.12rem;
             }
           }
           &.content3 {
             .title {
-              background-position: 0.2rem -2.04rem;
+              background-position: center -2.04rem;
             }
           }
           &.content4 {
             .title {
-              background-position: 0.2rem -2.96rem;
+              background-position: center -2.96rem;
             }
           }
           &.content5 {
             .title {
-              background-position: 0.2rem -3.88rem;
+              background-position: center -3.88rem;
             }
           }
           &.content6 {
             .title {
-              background-position: 0.2rem -4.68rem;
+              background-position: center -4.68rem;
             }
           }
           &.content7 {
@@ -239,10 +240,10 @@ export default {
               .icon {
                 position: absolute;
                 top: 0;
-                right: .6rem;
+                right: 0.6rem;
                 content: "";
                 z-index: 22;
-                .boxSet(1.6rem, .52rem);
+                .boxSet(1.6rem, 0.52rem);
                 background-image: url("./assets/images/part_text.png");
                 background-size: 230%;
                 background-position: center -4.37rem;
@@ -359,5 +360,22 @@ export default {
       }
     }
   }
+}
+
+@media (min-height: 700px) {
+#app {
+  main {
+    .part {
+      padding: 10% 6%;
+      ul {
+        li {
+          .img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
 }
 </style>
