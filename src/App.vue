@@ -34,8 +34,8 @@
     </main>
     <footer>
       <ul>
-        <router-link to="/" tag="li"></router-link>
-        <router-link to="/exhibition" tag="li"></router-link>
+        <router-link to="/" tag="li" exact></router-link>
+        <router-link to="/exhibition" tag="li" exact></router-link>
         <li>
           <a
             href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyNjk3MTY5Mg==&scene=124#wechat_redirect"
