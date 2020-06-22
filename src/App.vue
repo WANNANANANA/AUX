@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="landscape-box">
+      <img src="./assets/images/landscape.png" alt />
+    </div>
     <header :style="{animationPlayState: aniState}"></header>
     <main>
       <dial></dial>
@@ -148,6 +151,9 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   .boxSet();
+  .landscape-box {
+    display: none;
+  }
   header {
     .boxSet(100%, 10%);
     background-image: url("./assets/images/header.png");
@@ -363,19 +369,43 @@ export default {
 }
 
 @media (min-height: 700px) {
-#app {
-  main {
-    .part {
-      padding: 10% 6%;
-      ul {
-        li {
-          .img {
-            width: 100%;
+  #app {
+    main {
+      .part {
+        padding: 10% 6%;
+        ul {
+          li {
+            .img {
+              width: 100%;
+            }
           }
         }
       }
     }
   }
 }
+
+@media screen and (orientation: landscape) {
+  html {
+    body {
+      background: @blueColor4;
+      #app {
+        header,
+        main,
+        footer {
+          display: none;
+        }
+        .landscape-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .boxSet();
+          img {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
